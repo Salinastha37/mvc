@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication1.Models.Brand>
+
+@*@{
+    Layout = null;
+}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.brand1)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="margin: 10px;">
+
+                    @Html.DisplayFor(modelItem => item.brand1)
+                </td>
+                <td style="padding: 20px;">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                </td>
+                <td style="padding: 20px;">
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                </td>
+                <td style="padding: 20px;">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="text-center">
+        
+      <h3>  @Html.ActionLink("Create New", "Create")</h3>
+    
+        </div>
+</body>
+</html>

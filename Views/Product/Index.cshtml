@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WebApplication1.Models.product>
+
+@*@{
+    Layout = null;
+}*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.prodname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand.brand1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category.category1)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="margin: 10px;">
+
+                    @Html.DisplayFor(modelItem => item.prodname)
+                </td>
+                <td style="padding: 10px;">
+                    @Html.DisplayFor(modelItem => item.qty)
+                </td>
+                <td style="padding: 10px;">
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td style="padding: 20px;">
+                    @Html.DisplayFor(modelItem => item.Brand.brand1)
+                </td>
+                <td style="padding: 10px;">
+                    @Html.DisplayFor(modelItem => item.category.category1)
+                </td>
+                <td style="padding: 10px;">
+
+
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                </td>
+                <td style="padding: 10px;">
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                </td>
+                <td style="padding: 10px;">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+
+                </td>
+            </tr>
+        }
+
+
+    </table>
+    <div style="text-align: center;">
+
+        <h3>  @Html.ActionLink("Create New", "Create")</h3>
+
+    </div>
+</body>
+</html>
